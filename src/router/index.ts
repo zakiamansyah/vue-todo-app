@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 
-// Import pages
 import LoginPage from '../pages/LoginPage.vue';
 import TodosPage from '../pages/TodosPage.vue';
 import NotFoundPage from '../pages/NotFoundPage.vue';
@@ -35,7 +34,6 @@ const router = createRouter({
   routes
 });
 
-// Navigation guard for auth
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore();
   const requiresAuth = to.meta.requiresAuth;

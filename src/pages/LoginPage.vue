@@ -4,12 +4,10 @@ import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 import { useToast } from 'vue-toastification';
 
-// Router & Store
 const router = useRouter();
 const authStore = useAuthStore();
 const toast = useToast();
 
-// Form state
 const email = ref('');
 const password = ref('');
 const loading = ref(false);
@@ -18,13 +16,11 @@ const errors = ref({
   password: ''
 });
 
-// Set default values for testing
 onMounted(() => {
   email.value = 'adx-01@mail.com';
   password.value = '1234567890';
 });
 
-// Methods
 function validateForm() {
   let isValid = true;
   errors.value = {

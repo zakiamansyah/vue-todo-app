@@ -6,7 +6,6 @@ import App from './App.vue'
 import router from './router'
 import './style.css'
 
-// Toast options
 const toastOptions = {
   position: 'top-right',
   timeout: 3000,
@@ -24,13 +23,10 @@ const toastOptions = {
   newestOnTop: true
 }
 
-// Create app
 const app = createApp(App)
 
-// Use plugins
 app.use(createPinia())
 app.use(router)
 app.use(Toast, toastOptions)
 
-// Mount app
 app.mount('#app')

@@ -4,14 +4,11 @@ import { useTodosStore } from '../stores/todos';
 import TodoItem from '../components/TodoItem.vue';
 import AddTodoForm from '../components/AddTodoForm.vue';
 
-// Store
 const todosStore = useTodosStore();
 
-// State
 const loading = ref(true);
-const filterStatus = ref('all'); // 'all', 'completed', 'incomplete'
+const filterStatus = ref('all');
 
-// Methods
 onMounted(async () => {
   loading.value = true;
   try {
@@ -21,7 +18,6 @@ onMounted(async () => {
   }
 });
 
-// Computed
 const filteredTodos = computed(() => {
   switch (filterStatus.value) {
     case 'completed':
@@ -40,7 +36,6 @@ const filteredTodos = computed(() => {
     
     <AddTodoForm />
     
-    <!-- Filter controls -->
     <div class="flex mb-6 flex-wrap gap-2">
       <button
         @click="filterStatus = 'all'"
@@ -65,7 +60,6 @@ const filteredTodos = computed(() => {
       </button>
     </div>
     
-    <!-- Loading state -->
     <div v-if="loading" class="py-12 flex justify-center">
       <div class="flex flex-col items-center">
         <svg class="animate-spin h-8 w-8 text-primary-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -76,7 +70,6 @@ const filteredTodos = computed(() => {
       </div>
     </div>
     
-    <!-- Empty state -->
     <div v-else-if="filteredTodos.length === 0" class="py-12 text-center">
       <div class="mx-auto max-w-lg">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -94,7 +87,6 @@ const filteredTodos = computed(() => {
       </div>
     </div>
     
-    <!-- Todo list -->
     <div v-else class="space-y-4">
       <transition-group name="fade" tag="div" class="space-y-4">
         <TodoItem

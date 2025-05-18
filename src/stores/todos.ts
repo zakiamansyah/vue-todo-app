@@ -79,7 +79,7 @@ export const useTodosStore = defineStore('todos', {
 
         const index = this.items.findIndex(todo => todo.id === id);
         if (index !== -1) {
-          this.items.splice(index, 1, updatedTodo); // reactive update
+          this.items.splice(index, 1, updatedTodo);
         }
 
         if (this.currentTodo?.id === id) {
@@ -121,12 +121,11 @@ export const useTodosStore = defineStore('todos', {
       const newStatus = todo.completed === 1 ? 0 : 1;
 
       try {
-        // Use the dedicated service method that handles toggle
         const updatedTodo = await todoService.toggleTodoStatus(id, newStatus);
 
         const index = this.items.findIndex(t => t.id === id);
         if (index !== -1) {
-          this.items.splice(index, 1, updatedTodo); // reactive replacement
+          this.items.splice(index, 1, updatedTodo);
         }
 
         if (this.currentTodo?.id === id) {
