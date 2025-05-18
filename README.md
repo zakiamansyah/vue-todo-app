@@ -42,31 +42,40 @@ A beautiful Todo application built with **Vue 3**, **TypeScript**, **Pinia**, **
 - [Node.js](https://nodejs.org/) (v16+ recommended)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 
-### Install dependencies
+## Installation
 
-```sh
-npm install
-```
+1. **Clone the repository:**
 
-### Run the development server
+   ```sh
+   git clone https://github.com/zakiamansyah/vue-todo-app.git
+   cd vue-todo-app
+   ```
 
-```sh
-npm run dev
-```
+2. **Install dependencies:**
 
-The app will be available at [http://localhost:5173](http://localhost:5173) by default.
+   ```sh
+   npm install
+   ```
 
-### Build for production
+3. **Run the development server:**
 
-```sh
-npm run build
-```
+   ```sh
+   npm run dev
+   ```
 
-### Preview the production build
+   The app will be available at [http://localhost:5173](http://localhost:5173).
 
-```sh
-npm run preview
-```
+4. **Build for production:**
+
+   ```sh
+   npm run build
+   ```
+
+5. **Preview the production build:**
+
+   ```sh
+   npm run preview
+   ```
 
 ## Environment
 
